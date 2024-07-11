@@ -3,10 +3,14 @@ const { User, Organization } = require('../models');
 require('dotenv').config();
 
 const generateToken = (user) => {
-  return jwt.sign({ userId: user.userId }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
-  });
-};
+    const payload = { userId: user.userId };
+    const secret = process.env.JWT_SECRET;
+    const options = {
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    };
+  
+    return jwt.sign(payload, secret, options);
+  };
 
 exports.register = async (req, res) => {
   const { firstName, lastName, email, password, phone } = req.body;
