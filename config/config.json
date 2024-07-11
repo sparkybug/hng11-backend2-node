@@ -21,10 +21,17 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "avnadmin",
+    "password": "AVNS_WcVyJGKkMJhycymoHl3",
+    "database": "defaultdb",
+    "port": "28453",
+    "host": "pg-3792b82c-hng11-backend2.k.aivencloud.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
